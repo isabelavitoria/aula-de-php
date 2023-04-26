@@ -45,12 +45,85 @@
         
         default:
             echo 'Página não encontrada!';
-            break;
-    }
+            break; 
+        };
+        echo '<br />';
+ 
+        $tanque = 1;
+
+
+        echo $tanque <= 1? 'Abastecer agora <br />' : 'Combustível OK <br />';
+
+        $statusTanque = $tanque <= 1 ? FALSE : TRUE;
+
+        if($statusTanque) echo 'Combustível OK';
+        else echo 'Procurar em um posto para abastecer. ';
+
+        echo '<br />';
+
+        $vegetais = array('jerimum', 'batata', 'tomate');
+
+        echo 'Hoje vou cozinhar ' , $vegetais[0] , '<br />';
+        echo 'Hoje vou cozinhar ' , $vegetais[1] , '<br />';
+        echo 'Hoje vou cozinhar ' , $vegetais[2] , '<br />';
+
+        $vegetais = array(
+            'jerimum' => 'https://media.istockphoto.com/id/493599528/pt/vetorial/rapaz-feliz-sereia-com-cavalo-marinho-nata%C3%A7%C3%A3o.jpg?s=1024x1024&w=is&k=20&c=D7uTpOCd_UeSqBPF8CJCGNo78Vz9DEFpPt5z3RsMbs4=',
+            'batata' => 'https://media.istockphoto.com/id/1398979502/pt/vetorial/lovely-and-happy-mermaid-riding-on-a-seahorse-fantasy-animal-a-sunny-day-vector.jpg?s=170667a&w=0&k=20&c=dho1E47G2EwZ1NIBKmdywuyHAm3zatbj3J2G9AhtxFI=',
+            'tomate' => 'https://media.istockphoto.com/id/1398769538/pt/vetorial/lovely-and-happy-mermaid-riding-on-a-seahorse-fantasy-animal-a-sunny-day-vector.jpg?s=612x612&w=is&k=20&c=JPt51Kfydiz9tsHdjrTfLRVAk5k7vGKTq_jMNlSs_C0=');
+
+        foreach($vegetais as $chave=> $valor){
+            echo 'Hoje vou cozinhar '. $chave . 
+                "<img src= \"$valor\" /><br />";
+        }
+        
+
+    
+        
+        
+
+       
+
+         
+        
 
     ?> 
     
+        <form method = "post" action="index.php">
+        Nome: <input type="text" name="nome" />
+        <input type="submit">        
+        </form>
+        <?php
+            if(empty($_POST['nome'])){
+                echo'Nome é um campo obrigatório. ';
+            }else{
+                echo $_POST['nome'] . ', obrigado por se inscrever.';
+            }
+
+
+
+
+        $data = date('d/m/y');
+        $hora = date('H');
+        if($hora<12){
+            $mensagem = " Bom dia! <img src=\"https://i.pinimg.com/736x/7e/4e/92/7e4e92a2a4b6289a2dfb3de5b093b5b6.jpg\" />";
+        }elseif(date('H') > 11 && date('H') <18){
+            $mensagem = " Boa tarde! <img src=\"https://i.pinimg.com/originals/2a/86/25/2a8625b082dca29668b4937e68cd84b8.jpg\"/>";
+            $mensagem .= ' Aceita um cafezinho quentinho?';
+        }elseif(date('H') > 17){
+            $mensagem = " Boa noite! <img src=\"https://i0.wp.com/omeudiadia.com.br/wp-content/uploads/2022/05/boa-noite-com-carinho.png?fit=657%2C653&ssl=1\" />";
+        }
+
+    
+        ?>
+
+        Olá <?php echo $mensagem; ?>
+ 
+    
+    
+    
 
     </body>
+
     
 </html>
