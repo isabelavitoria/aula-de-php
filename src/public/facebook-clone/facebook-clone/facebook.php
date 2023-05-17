@@ -112,7 +112,7 @@
               >
                 <div class="h-8 w-14">
                   <img
-                    src="Avatar1.png"
+                    src="https://static.significados.com.br/foto/pessoa-og.jpg"
                     class="w-10 h-8 rounded-full hidden md:flex"
                     alt=""
                   />
