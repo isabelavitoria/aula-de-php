@@ -16,12 +16,12 @@
         $cupomValidos = array('NIVER10','PROMO15');
         $cupomAceito = in_array($cupom, $cupomValidos);
     ?>
-    <h1><a href="index.php"><img src=""></a>Shopping Virtual</h1>
+    <h1><a href="shopping.php"><img src=""></a>Shopping Virtual</h1>
     <ul>
         <li><a href="p1.php<?php echo ($cupomAceito)?'?cupom=' . $cupom:''; ?>">Produto 1</a></li>
         <li><a href="p2.php<?php echo ($cupomAceito)?'?cupom=' . $cupom:''; ?>">Produto 2</a></li>
     </ul>
-    <form action="index.php" method="GET">
+    <form action="shopping.php" method="GET">
         Cupom de desconto: 
         <?php 
             if ($cupomAceito) {
