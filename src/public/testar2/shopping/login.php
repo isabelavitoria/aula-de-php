@@ -16,10 +16,10 @@ $erro = $_SESSION['erro'];
     <?php 
     if($erro){
     ?>
-    <img src="https://icons.iconarchive.com/paomedia/small-n-flat/48/shield-warning-icon.png"/>
+
     <strong> Login ou senha incorreta</strong>
     <br /><br />
-    <?php };?>
+    <?php }?>
         Login: <input type="text" name="login" />
         <br/><br />
         Senha: <input type="password" name="senha" />
